@@ -1,0 +1,25 @@
+<div class="p-grid">
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" routerLink="/filme" [class.disabled]="!auth.hasPermission('acesso_usuario')">
+      <div class="box wow fadeInLeft">
+        <div class="icon"><i class="fa fa-user teal-text"></i></div>
+        <h4 class="title">Usuarios </h4>
+        <p class="description">
+          Indivíduo que utiliza ou trabalha com algum objeto, dispositivo ou serviço em particular.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" routerLink="/filme">
+      <div class="box wow fadeInLeft">
+        <div class="icon"><i class="fa fa-film light-blue-text"></i></div>
+        <h4 class="title"> Filmes</h4>
+        <p class="description">
+          Um filme pode ser categorizado em diferentes tipos de gêneros ao mesmo tempo, sendo em um desses gêneros sempre o que é mais destacado durante o longa.
+        </p>
+      </div>
+    </a>
+  </div>
+</div>

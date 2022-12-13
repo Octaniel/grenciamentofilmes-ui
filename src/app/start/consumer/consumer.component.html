@@ -1,0 +1,57 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <div class="light-font bc-icons-2">
+      <mdb-breadcrumb customClass="bg-light-teal white-text">
+        <mdb-breadcrumb-item routerLink="/index">
+          INÍCIO
+        </mdb-breadcrumb-item>
+        <mdb-breadcrumb-item routerLink="/documento">
+          <mdb-icon fas icon="caret-right" class="mr-1"></mdb-icon>
+          DOCUMENTOS
+        </mdb-breadcrumb-item>
+        <mdb-breadcrumb-item customClass="white-text">
+          <mdb-icon fas icon="caret-right" class="mr-1"></mdb-icon>
+          ADQUIRENTE
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" routerLink="/consumer/document/read">
+      <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="icon"><i class="fa fa-list-alt blue-text"></i></div>
+        <h4 class="title"> Documentos Comunicados pelos Emitentes </h4>
+        <p class="description">
+          Permite aos adquirentes consultarem as facturas e documentos equivalentes que lhes
+          foram emitidos.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" routerLink="/consumer/document-consumer/create">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-file-medical blue-text"></i></div>
+        <h4 class="title"> Registar Documentos </h4>
+        <p class="description">
+          Permite comunicar as facturas e outros documentos emitidos pelos seus emitentes.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" routerLink="/consumer/document-consumer/read">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-list-alt blue-text"></i></div>
+        <h4 class="title"> Documentos Registados pelo Adquirente </h4>
+        <p class="description">
+          Permite verificar os documentos cadastrados pelo consumidor.
+        </p>
+      </div>
+    </a>
+  </div>
+
+</div>

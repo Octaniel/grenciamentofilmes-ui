@@ -1,0 +1,114 @@
+/*--------------------------------------------------------------
+# Intro Section
+--------------------------------------------------------------*/
+
+#intro {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    background: #eeeeee /*url("/assets/img/intro-carousel/1.jpg") no-repeat*/;
+    background-size: cover;
+  }
+
+  #intro .intro-content {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #intro .intro-content h2 {
+    color: #0c2e8a;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 54px;
+    font-weight: 600;
+  }
+
+  #intro .intro-content h2 span {
+    color: #26a69a;
+    text-decoration: underline;
+  }
+
+  #intro .intro-content .intro-text-h5 {
+    width: 60%;
+    color: #353538;
+  }
+
+  @media (max-width: 767px) {
+    #intro .intro-content h2 {
+      font-size: 34px;
+    }
+    #intro .intro-content .intro-text-h5 {
+      width: 90%;
+    }
+    #intro .intro-content h5 {
+      font-size: 12px;
+    }
+  }
+
+  #intro .intro-content .btn-get-started, #intro .intro-content .btn-projects {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 2px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #fff;
+  }
+
+  #intro .intro-content .btn-get-started {
+    background: #0c2e8a;
+    border: 2px solid #0c2e8a;
+  }
+
+  #intro .intro-content .btn-get-started:hover {
+    background: none;
+    color: #0c2e8a;
+  }
+
+  #intro .intro-content .btn-projects {
+    background: #50d8af;
+    border: 2px solid #50d8af;
+  }
+
+  #intro .intro-content .btn-projects:hover {
+    background: none;
+    color: #50d8af;
+  }
+
+  #intro #intro-carousel {
+    z-index: 8;
+  }
+
+  #intro #intro-carousel::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 7;
+  }
+
+  #intro #intro-carousel .item {
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-property: opacity;
+  }

@@ -1,0 +1,173 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <div class="light-font bc-icons-2">
+      <mdb-breadcrumb customClass="bg-light-teal white-text">
+        <mdb-breadcrumb-item routerLink="/index">
+          INÍCIO
+        </mdb-breadcrumb-item>
+        <mdb-breadcrumb-item routerLink="/documento">
+          <mdb-icon fas icon="caret-right" class="mr-1"></mdb-icon>
+          DOCUMENTOS
+        </mdb-breadcrumb-item>
+        <mdb-breadcrumb-item customClass="white-text">
+          <mdb-icon fas icon="caret-right" class="mr-1"></mdb-icon>
+          EMITENTE
+        </mdb-breadcrumb-item>
+      </mdb-breadcrumb>
+    </div>
+  </div>
+
+  <!-- <div class="p-col-12" *ngIf="showDocumentsWithIssues">
+    <div class="alert alert-light" role="alert">
+      <p>
+        <span class="text-danger">
+          <mdb-icon fas icon="info-circle"></mdb-icon>
+          <strong> IMPORTANTE!</strong>
+        </span>
+        Encontramos documentos comunicados que necessitam de correção.
+        <a routerLink="/emitter/document/read-issues">Saiba mais</a>.
+      </p>
+    </div>
+  </div> -->
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box"
+      [routerLink]="auth.hasPermission('ROLE_CADASTRAR_EMPRESA_PEDIDO_EMISSAO_FATURA') ? '/emitter/emission/create' : '#'">
+      <!-- /emitter/emission/new -->
+      <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="icon"><i class="fa fa-file-medical teal-text"></i></div>
+        <h4 class="title"> Pedir Nova Série Para Software Autónomo </h4>
+        <p class="description">
+          Permite adquirir novas séries de facturas a serem emitidas aos seus consumidores.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <!--
+
+    <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_PEDIDO_EMISSAO_FATURA')"
+      [routerLink]="auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_PEDIDO_EMISSAO_FATURA') ? '/emissao/emitente/verificar' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-list-alt pink-text"></i></div>
+        <h4 class="title"> Verificar Pedidos de Séries </h4>
+        <p class="description">
+          Permite consultar as séries de facturas e outros documentos requisitados.
+        </p>
+      </div>
+    </a>
+  </div>
+  -->
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_PEDIDO_EMISSAO_DOCUMENTO')"
+      [routerLink]="auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_PEDIDO_EMISSAO_DOCUMENTO') ? '/emitter/emission-document/read' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-list-alt teal-text"></i></div>
+        <h4 class="title"> Verificar Séries </h4>
+        <p class="description">
+          Permite consultar as séries de documentos solicitados à Direcção dos Impostos.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_CADASTRAR_POR_EMISSOR_DOCUMENTO_GERADO')"
+      [routerLink]="auth.hasPermission('ROLE_CADASTRAR_POR_EMISSOR_DOCUMENTO_GERADO') ? '/emitter/document/new' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-file-import teal-text"></i></div>
+        <h4 class="title"> Recolher Documento </h4>
+        <p class="description">
+          Permite comunicar as facturas e outros documentos emitidos aos seus adquirentes.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO')"
+      [routerLink]="auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO') ? '/emitter/document/read' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-file-invoice-dollar teal-text"></i></div>
+        <h4 class="title"> Documentos Recolhidos </h4>
+        <p class="description">
+          Permite consultar os detalhes das facturas comunicadas à Direccção dos impostos.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO')"
+      [routerLink]="auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO') ? '/emitter/file-document/read' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-file-upload teal-text"></i></div>
+        <h4 class="title"> Ficheiros Recolhidos </h4>
+        <p class="description">
+          Permite consultar os ficheiros de comunicação dos documentos enviados.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO')"
+      [routerLink]="auth.hasPermission('ROLE_PESQUISAR_POR_EMISSOR_DOCUMENTO_GERADO') ? '/emitter/document-consumer/read' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-list-alt teal-text"></i></div>
+        <h4 class="title"> Documentos Registados pelos adquirentes </h4>
+        <p class="description">
+          Permite consultar documentos registados pelos seus adquirentes.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-4">
+    <a class="a-box" (click)="displayTransportSerie=true">
+      <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="icon"><i class="fa fa-file-export teal-text"></i></div>
+        <h4 class="title"> Transportar séries </h4>
+        <p class="description">
+          Permite ao emitente transportar todas as suas séries de forma automática para o ano 2022.
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<p-dialog header="TRANSPORTAR SÉRIE" [(visible)]="displayTransportSerie" [style]="{width: '60vw'}" [modal]="true">
+  <div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-6">
+      <a class="a-box" routerLink="/emitter/emission-document/transport">
+        <div class="box wow fadeInLeft">
+          <div class="icon"><i class="fa fa-file-alt teal-text"></i></div>
+          <h4 class="title">Transportar séries de forma manual </h4>
+          <p class="description">
+            Permite transportar qualquer série emitida nos anos anteriores ao 2022.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="p-col-12 p-md-6 p-lg-6">
+      <a class="a-box" routerLink="/emitter/emission-document/transport/list">
+        <div class="box wow fadeInLeft">
+          <div class="icon"><i class="fa fa-clipboard-check light-blue-text"></i></div>
+          <h4 class="title"> Transportar séries de forma automática</h4>
+          <p class="description">
+            Permite selecionar e transportar várias séries todas ou um grupo de séries do ano 2021 para 2022.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button type="button" mdbBtn color="light" mdbWavesEffect (click)="displayTransportSerie=false">
+      FECHAR
+    </button>
+  </ng-template>
+</p-dialog>

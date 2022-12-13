@@ -1,0 +1,64 @@
+<div class="p-grid">
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" routerLink="/documento">
+      <div class="box wow fadeInLeft">
+        <div class="icon"><i class="fa fa-file-alt teal-text"></i></div>
+        <h4 class="title">Documentos </h4>
+        <p class="description">
+          Pedidos de séries e comunicação de documentos para operadores económicos e consumidores.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" routerLink="/certificacao">
+      <div class="box wow fadeInLeft">
+        <div class="icon"><i class="fa fa-clipboard-check pink-text"></i></div>
+        <h4 class="title"> Certificação</h4>
+        <p class="description">
+          Pedido e consulta de certificação para tipografias e operadores económicos com softwares de
+          facturação.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" [class.disabled]="!auth.hasPermission('ROLE_MENU_TIPOGRAFIA')"
+      [routerLink]="auth.hasPermission('ROLE_MENU_TIPOGRAFIA') ? '/tipografia' : '#'">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-text-height blue-text"></i></div>
+        <h4 class="title">Tipografia</h4>
+        <p class="description">
+          Solicitação e gestão das séries de documentos em blocos de papel requisitadas pelos clientes.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12 p-md-6 p-lg-6">
+    <a class="a-box" routerLink="/util">
+      <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="icon"> <i class="fa fa-tools purple-text"></i></div>
+        <h4 class="title">Funcionalidades Úteis</h4>
+        <p class="description">
+          Emissão de facturas no portal, contribuintes autorizados e outras funcionalidades.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-col-12">
+    <a class="a-box" routerLink="/agente" *ngIf="auth.hasPermission('ROLE_MENU_AGENTE')">
+      <div class="box wow fadeInRight" data-wow-delay="0.2s">
+        <div class="icon"><i class="fa fa-building red-text"></i></div>
+        <h4 class="title"> Agente Fiscal </h4>
+        <p class="description">
+          Área de gestão das comunicações de documentos emitidos e solicitações enviadas.
+        </p>
+      </div>
+    </a>
+  </div>
+
+</div>

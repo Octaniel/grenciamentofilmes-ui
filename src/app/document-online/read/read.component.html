@@ -1,0 +1,100 @@
+<div class="p-grid">
+
+  <div class="p-col-12">
+    <mdb-card>
+      <mdb-card-header class="mdb-card-header">
+        <form autocomplete="off" (ngSubmit)="read()">
+          <div class="p-col-12">
+            <div class="p-fluid p-formgrid p-grid">
+
+              <div class="p-field p-col">
+                <span class="p-float-label">
+                  <input pInputText class="p-inputtext-sm" name="numDocumentoOnline"
+                    [(ngModel)]="filter.diretor">
+                  <label for="float-input">Diretor</label>
+                </span>
+              </div>
+
+              <div class="p-field p-col">
+                <span class="p-float-label">
+                  <input pInputText class="p-inputtext-sm" name="nifEmissorOnline"
+                    [(ngModel)]="filter.nome">
+                  <label for="float-input">Nome</label>
+                </span>
+              </div>
+
+              <div class="p-field p-col">
+                <span class="p-float-label">
+                  <input pInputText class="p-inputtext-sm" name="nifConsumidorOnline"
+                    [(ngModel)]="filter.genero">
+                  <label for="float-input">Genero</label>
+                </span>
+              </div>
+
+              <div class="p-field p-col">
+                <button type="submit" mdbBtn color="pink" size="sm" class="btn-block btn-filter">
+                  Filtrar
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </mdb-card-header>
+
+      <mdb-card-body>
+        <p-table styleClass="p-datatable-sm p-datatable-striped p-datatable-responsive-demo" [value]="invoices"
+          [loading]="loading" [paginator]="true" [rows]="filter.rows" [lazy]="true" [totalRecords]="total"
+          (onLazyLoad)="onChangePage($event)">
+          <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+              Total de {{ total | number:'1.0-0'}} filmes
+            </div>
+          </ng-template>
+
+          <ng-template pTemplate="header">
+            <tr>
+              <th [style]="{width: '31%'}">Nome</th>
+              <th [style]="{width: '21%'}">Diretor</th>
+              <th [style]="{width: '16%'}">Data Criação</th>
+              <th [style]="{width: '16%'}">Genero</th>
+              <th [style]="{width:'2%'}"></th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+              <td>
+                <span class="p-column-title">Nome</span>
+                {{ rowData.nome }}
+              </td>
+
+              <td>
+                <span class="p-column-title">Diretor</span>
+                {{ rowData.diretor }}
+              </td>
+
+              <td>
+                <span class="p-column-title">Data Criação</span>
+                {{ rowData.dtCria | date:'dd/MM/yyyy' }}
+              </td>
+
+              <td>
+                <span class="p-column-title">Genero</span>
+                {{ rowData.genero.nome }}
+              </td>
+
+              <td [style]="{padding: '1px 4px'}">
+                <button type="button" mdbBtn color="info" size="sm" pTooltip="Ver mais informaões"
+                  tooltipPosition="left" class="btn-block" [style]="{padding: '4px 0'}"
+                  [routerLink]="['/document-online/read', rowData.id]">
+                  <i class="fa fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>

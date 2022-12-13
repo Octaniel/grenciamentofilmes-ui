@@ -1,0 +1,165 @@
+<div class="row clearfix">
+
+  <div class="ui-g">
+
+    <div class="p-col-6" [style]="{margin: '0 auto'}">
+      <mdb-card>
+        <mdb-card-header>
+          <button type="button" size="md" color="info" mdbBtn mdbWavesEffect kendo-button
+            (click)="pdf.saveAs(invoice.numeroDocumento + '.pdf')">
+            EXPORTAR
+          </button>
+
+          <button type="button" size="md" color="light" mdbBtn mdbWavesEffect
+            routerLink="/emitter/document-online/create">
+            NOVO DOCUMENTO
+          </button>
+        </mdb-card-header>
+      </mdb-card>
+
+      <kendo-pdf-export #pdf paperSize="A4" margin="0.4cm">
+        <div class="invoice-box">
+          <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+              <td colspan="2">
+                <table class="tb-two-rows">
+                  <tr>
+                    <td>
+                      <strong>{{ invoice.tbPessoaNomeEmissor | titlecase }}</strong> <br>
+                      <strong>NIF:</strong> {{ invoice.tbContribuinteNifEmissor }} <br>
+                      <strong>Endereço: </strong> {{ invoice.tbPessoaEnderecoEmissor | titlecase }} <br>
+                      <strong>Telefone: </strong> {{ invoice.tbPessoaTelefoneEmissor | titlecase }} <br>
+                    </td>
+
+                    <td>
+                      <strong>
+                        {{ invoice.tbTipoDocumentoDescricao }}
+                      </strong>
+                      <br>
+
+                      <strong>
+                        Nº: {{ invoice.numeroDocumento }}
+                      </strong><br>
+
+                      <strong>Data: </strong>
+                      {{ invoice.dtEmissaoDocumento | date:'dd/MM/yyyy' }}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr class="consumer">
+              <td colspan="2">
+                <table class="tb-two-rows">
+                  <tr>
+                    <td>
+                      <strong>Adquirente: </strong> <br>
+                      {{ invoice.tbPessoaNomeConsumidor | titlecase }}
+                    </td>
+                    <td>
+                      <strong>NIF: </strong> <br>
+                      {{ invoice.tbContribuinteNifConsumidor }}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+          <div class="invoice-items">
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr>
+                  <th [style]="{width: '5%'}">Qt</th>
+                  <th [style]="{width: '55%'}">Descrição </th>
+                  <th [style]="{width: '10%'}">V. Unit.</th>
+                  <th [style]="{width: '10%'}">Sub Total</th>
+                  <th [style]="{width: '10%'}">ISC</th>
+                  <th [style]="{width: '10%'}">V.Total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="item" *ngFor="let item of invoice.itensDocumentoGeradoOnlinesDto">
+                  <td> {{ item.quantItens }} </td>
+                  <td [style]="{textAlign: 'left'}"> {{ item.descItens }} </td>
+                  <td> {{ item.valorUnitItens | number:'0.1-2':'pt' }} </td>
+                  <td> {{ item.valorBaseTributavelItens | number:'0.1-2':'pt' }} </td>
+                  <td> {{ item.valorImposto | number:'0.1-2':'pt' }} </td>
+                  <td> {{ item.totalLinhaAposImpostoItens | number:'0.1-2':'pt' }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="invoice-bottom">
+            <div class="invoice-total">
+              <table class="tb-two-rows" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td></td>
+                  <td>
+                    Subtotal:
+                    <strong>
+                      {{ invoice.totalValorBaseTributavel | number:'0.1-2':'pt' }}
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <td>
+                    Total ISC:
+                    <strong>
+                      {{ invoice.totalImposto | number:'0.1-2':'pt' }}
+                    </strong>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <td>
+                    Total:
+                    <strong>
+                      {{ invoice.totalValor | number:'0.1-2':'pt' }}
+                    </strong>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="invoice-obs">
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    {{ invoice.observacaoDocumentoGeradoOnline }}
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="invoice-certification">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  Documento processado pelo Sistema de Emissão de Facturas e documentos equivalentes da Direcção dos
+                  Impostos.
+                </li>
+              </ul>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <strong>Número da certificação:</strong>
+                  {{ invoice.tbPedidoCertificacaoNumeroCertificacao }}
+                </li>
+                |
+                <li class="list-inline-item" [style]="{marginLeft: '10px'}">
+                  <strong>Número da autorização:</strong>
+                  {{ invoice.tbAutorizacaoEmissaoNumeroAutorizacao }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </kendo-pdf-export>
+    </div>
+  </div>
+</div>

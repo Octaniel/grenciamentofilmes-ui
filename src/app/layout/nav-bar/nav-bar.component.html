@@ -1,0 +1,16 @@
+<header id="header">
+  <div class="container">
+
+    <div id="logo" class="pull-left">
+      <h1><a routerLink="/index" class="scrollto">Gestor<span>Filmes</span></a></h1>
+    </div>
+
+    <nav id="nav-menu-container" *ngIf="hasSession()">
+      <ul class="nav-menu">
+        <li routerLinkActive="menu-active"><a routerLink="/index">Início</a></li>
+        <li routerLinkActive="menu-active" *ngIf="auth.hasPermission('acesso_usuario')"><a routerLink="/adquirente">Usuario</a></li>
+        <li routerLinkActive="menu-active"><a routerLink="/emitente">Filme</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

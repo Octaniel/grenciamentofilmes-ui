@@ -1,0 +1,18 @@
+<section id="topbar" class="d-none d-lg-block">
+  <div class="container clearfix">
+    <div class="contact-info float-left">
+      <a href="javascript:;">Globo</a>
+    </div>
+
+    <div class="social-links float-right">
+
+      <a routerLink="/user/profile" *ngIf="!auth.isAccessTokenInvalid()">
+        <i class="fas fa-user"></i> {{ auth.jwtPayload ? auth.jwtPayload.user.pessoa.nome : ''}}
+      </a>
+
+      <a (click)="logout()" *ngIf="!auth.isAccessTokenInvalid()">
+        <i class="fas fa-sign-in-alt"></i> Sair
+      </a>
+    </div>
+  </div>
+</section>

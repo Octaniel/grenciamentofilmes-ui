@@ -1,0 +1,35 @@
+export class TaxpayerWebService {
+    contriId: string;
+    contriNome: string;
+    contriApelido: string;
+    contriFiliacaopai: string;
+    contriFiliacaomae: string;
+    contriDatanascimento: Date;
+    contriLocalnascimento: string;
+    contriDatareg: Date;
+    actveconom: string;
+    actveconom2: string;
+    conindfixa: string;
+    conpredurb: string;
+    distrito: string;
+    imprendime: string;
+    bi: String;
+    morada: string;
+    nif: string;
+    nome: string;
+    activiPrinc: string;
+    activiSecund: string;
+    pagtoconta: string;
+    retensalar: string;
+    telefone: string;
+    cp: string;
+    observ: string;
+    contriEstado: number;
+    contriAlcunha: string;
+    contriDatafim: Date;
+    contriTloginIduser: string;
+    contriGueNproc: number;
+    contriNib: string;
+    contriImportValido: Boolean;
+    contriImportDatavalidade: Date;
+}

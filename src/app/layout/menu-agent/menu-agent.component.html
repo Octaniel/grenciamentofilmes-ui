@@ -1,0 +1,95 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light blue-grey lighten-5" [containerInside]="false">
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/agente">Menu</a></mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Contribuintes<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/user/read">
+            Contribuintes Registados
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/taxpayer/read">
+            Contribuintes Vinculados
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/user-admin/validate-account">
+            Validar Utilizador
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/agent/taxpayer/great-taxpayer-situation">
+            Situação dos Grandes Contribuintes
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/agent/taxpayer/without-series">
+            Contribuintes Sem Autorização
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/agent/taxpayer/without-document">
+            Contribuintes Sem Comunicação
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/agent/certification/read">
+          Certificação
+        </a>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Autorização<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/emission-document/read">
+            Verificar Séries
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/authorization/total-serie-by-emitter">
+            Total de Séries Por Emitente
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Comunicação<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/document/read">
+            Documentos Recolhidos
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/document-online/read">
+            Documentos Emitidos No Portal
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/file-document/read">
+            Ficheiros Recolhidos
+          </a>
+          <!-- <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/file-document-cancellation-request/read">
+            Solicitação de Anulação Ficheiros
+          </a> -->
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/control-document/read">
+            Controlo de Documentos Comunicados
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/document-consumer/read">
+            Documentos Registados pelos adquirentes
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Mais<span class="caret"></span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/notifications/read">
+            Notificações
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/occurrence/read">
+            Solicitações
+          </a>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/third-party/read">
+            Gestão de Terceiros
+          </a>
+        </div>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>

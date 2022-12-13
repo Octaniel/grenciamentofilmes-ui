@@ -1,0 +1,45 @@
+<div class="row clearfix">
+
+  <div class="login-title text-center">
+    <h2 class="h2-responsive">Autenticar</h2>
+  </div>
+
+  <mdb-card class="card-login">
+    <mdb-card-body>
+      <form autocomplete="off" #f="ngForm">
+        <div class="p-fluid p-formgrid p-grid">
+
+          <div class="p-field p-col-12">
+            <label>Utilizador</label>
+            <div class="form-line">
+              <input pInputText type="text" class="form-control" name="usuario" placeholder="Seu NIF" autofocus ngModel
+                required #usuario>
+            </div>
+          </div>
+
+          <div class="p-field p-col-12">
+            <label>Senha</label>
+            <div class="form-line">
+              <input pInputText type="password" class="form-control" name="senha" placeholder="Sua Senha"
+                showPassword="true" ngModel required #senha>
+            </div>
+          </div>
+
+          <div class="p-col-12">
+            <button mdbBtn color="pink" block="true" class="my-4" type="submit" size="sm"
+              [disabled]="!f.valid || loading"
+              (click)="login(usuario.value, senha.value); senha.value=''">AUTENTICAR</button>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="p-col-12">
+            <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '3px'}"></p-progressBar>
+          </div>
+        </div>
+
+      </form>
+    </mdb-card-body>
+  </mdb-card>
+</div>

@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+
+#topbar {
+  background: #2bbbad;
+  padding: 2px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+#topbar .contact-info {
+  margin-top: 8px;
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #ffffff;
+}
+
+#topbar .contact-info a:hover {
+  color: #eeeeee;
+}
+
+// #topbar .contact-info i {
+//   color: #ffffff;
+//   padding: 4px;
+// }
+
+// #topbar .contact-info .fa-phone {
+//   padding-left: 20px;
+//   margin-left: 20px;
+//   border-left: 1px solid #e9e9e9;
+// }
+
+#topbar .social-links a,
+#topbar .social-links div,
+#topbar .social-links .notification {
+  color: #ffffff;
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1px;
+  border-left: 1px solid #e9e9e9;
+}
+
+#topbar .social-links a .last-session {
+  display: block;
+  font-size: 10px;
+  margin-left: 16px;
+  padding-top: 7px;
+}
+
+#topbar .social-links a:hover,
+#topbar .social-links .notification:hover {
+  color: #eeeeee;
+}
+
+#topbar .social-links a:first-child {
+  border-left: 0;
+}
